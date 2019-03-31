@@ -1,0 +1,32 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:@typescript-eslint/recommended", "airbnb"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["jest", "react-hooks"],
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": ["!styled-components/macro"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+import React from 'react';
+import { render } from 'react-testing-library';
+
+import {{ pascalCase name }} from './{{ pascalCase name }}';
+
+describe('<{{ pascalCase name }} />', () => {
+  it('правильно отображается', () => {
+    const { container } = render(<{{ pascalCase name }} />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
