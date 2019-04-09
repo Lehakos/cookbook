@@ -8,14 +8,28 @@
       "jsx": true
     }
   },
-  "plugins": ["jest", "react-hooks"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "directory": "./tsconfig.json"
+      }
+    }
+  },
+  "plugins": ["jest", "import", "react-hooks"],
   "env": {
     "jest": true
   },
   "rules": {
+    "prefer-destructuring": 0,
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
+    "import/no-unresolved": 0,
+    "import/named": 0,
     "react-hooks/rules-of-hooks": "error",
+    "@typescript-eslint/indent": [1, 2],
     "no-restricted-imports": [
       "error",
       {
