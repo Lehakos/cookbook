@@ -2,7 +2,9 @@ import React from 'react';
 
 import * as s from './Spaces.styles';
 
-type Props = { spaces: number[] };
+interface Props {
+  spaces: number[];
+}
 
 const Spaces: React.FunctionComponent<Props> = function ({ spaces }) {
   return (

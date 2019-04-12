@@ -1,5 +1,5 @@
 // import original module declarations
-import 'styled-components/macro';
+import 'styled-components';
 
 import { Theme } from './shared/theme';
 

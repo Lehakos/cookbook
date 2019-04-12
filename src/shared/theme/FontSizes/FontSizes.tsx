@@ -2,7 +2,9 @@ import React from 'react';
 
 import * as s from './FontSizes.styles';
 
-type Props = { fontSizes: number[] };
+interface Props {
+  fontSizes: number[];
+}
 
 const FontSizes: React.FunctionComponent<Props> = function ({ fontSizes }) {
   return (

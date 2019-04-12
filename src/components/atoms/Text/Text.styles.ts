@@ -1,9 +1,12 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 import { typography, TypographyProps } from 'shared/styledProps';
 
-export const Wrapper = styled.div<TypographyProps>`
+type WrapperProps = TypographyProps<HTMLDivElement>;
+
+export const Wrapper = styled.div<WrapperProps>`
   ${typography}
 `;
 
-export { TypographyProps };
+// eslint-disable-next-line no-undef
+export { WrapperProps };

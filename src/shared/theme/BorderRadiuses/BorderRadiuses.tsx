@@ -2,7 +2,9 @@ import React from 'react';
 
 import * as s from './BorderRadiuses.styles';
 
-type Props = { radiuses: number[] };
+interface Props {
+  radiuses: number[];
+}
 
 const BorderRadiuses: React.FunctionComponent<Props> = function ({ radiuses }) {
   return (
@@ -11,7 +13,7 @@ const BorderRadiuses: React.FunctionComponent<Props> = function ({ radiuses }) {
         <s.Item key={value}>
           <s.BorderRadius borderRadius={index}>
             <div>
-BorderRadius index:
+              BorderRadius index:
               {index}
             </div>
             <br />

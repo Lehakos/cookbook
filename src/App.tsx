@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import GlobalStyles from './globalStyles';
+import GlobalStyles from './GlobalStyles';
 
 const App: React.FunctionComponent<{}> = function () {
   return (

@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import {
   compose,
   fontFamily,
@@ -23,7 +24,8 @@ export const typography = compose(
   color,
 );
 
-export type TypographyProps = FontFamilyProps &
+export type TypographyProps < T > = HTMLAttributes<T> &
+FontFamilyProps &
 FontSizeProps &
 FontWeightProps &
 LineHeightProps &

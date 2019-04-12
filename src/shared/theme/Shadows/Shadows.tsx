@@ -2,7 +2,9 @@ import React from 'react';
 
 import * as s from './Shadows.styles';
 
-type Props = { shadows: string[] };
+interface Props {
+  shadows: string[];
+}
 
 const Shadows: React.FunctionComponent<Props> = function ({ shadows }) {
   return (
