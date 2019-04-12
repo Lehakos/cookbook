@@ -8,7 +8,8 @@
     "test": "cross-env NODE_ENV=test jest --watchAll --colors",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "generate": "plop --plopfile generators/index.js"
+    "generate": "plop --plopfile generators/index.js",
+    "publish:storybook": "git checkout gh-pages && git rebase master && yarn build-storybook && git add storybook-static && git commit -m 'chore(storybook): собран сторибук для публикации' && git subtree push --prefix storybook-static origin gh-pages && git checkout -"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
