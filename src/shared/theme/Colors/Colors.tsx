@@ -2,9 +2,9 @@ import React from 'react';
 
 import * as s from './Colors.styles';
 
-type Props = {
+interface Props {
   colors: { key: string; value: string }[];
-};
+}
 
 const Color: React.FunctionComponent<Props> = function ({ colors }) {
   return (

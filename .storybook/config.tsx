@@ -1,20 +1,20 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components/macro';
+import { ThemeProvider } from 'styled-components';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withConsole } from '@storybook/addon-console';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
-import 'normalize.css';
 
-import GlobalStyles from 'globalStyles';
 import theme from 'shared/theme';
+
+import GlobalStyles from '../src/GlobalStyles';
 
 addParameters({
   options: {
     theme: create({
       base: 'light',
-      brandTitle: 'CookBook ui-kit',
+      brandTitle: 'ui-kit',
     }),
     sortStoriesByKind: true,
     hierarchyRootSeparator: '|',

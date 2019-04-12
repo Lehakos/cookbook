@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import {
   compose,
   display,
@@ -20,7 +21,7 @@ import {
   SpaceProps,
 } from 'styled-system';
 
-export const layout = compose({
+export const layout = compose(
   display,
   maxWidth,
   minWidth,
@@ -30,9 +31,10 @@ export const layout = compose({
   size,
   verticalAlign,
   space,
-});
+);
 
-export type LayoutProps = DisplayProps &
+export type LayoutProps < T > = HTMLAttributes<T> &
+DisplayProps &
 MaxWidthProps &
 MinWidthProps &
 HeightProps &

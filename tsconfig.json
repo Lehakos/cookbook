@@ -6,14 +6,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": false,
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
-    "paths": {
-      "src/*": ["*"]
-    },
+    "sourceMap": true,
     "plugins": [
       {
         "name": "typescript-styled-plugin"
@@ -22,7 +20,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es6"
+    "target": "es2015"
   },
   "include": ["src"]
 }

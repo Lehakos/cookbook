@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import {
   compose,
   alignItems,
@@ -24,7 +25,7 @@ import {
   FlexBasisProps,
 } from 'styled-system';
 
-export const flexbox = compose({
+export const flexbox = compose(
   alignItems,
   justifyContent,
   flexWrap,
@@ -36,9 +37,10 @@ export const flexbox = compose({
   alignSelf,
   order,
   flexBasis,
-});
+);
 
-export type FlexboxProps = AlignItemsProps &
+export type FlexboxProps < T > = HTMLAttributes<T> &
+AlignItemsProps &
 JustifyContentProps &
 FlexWrapProps &
 FlexDirectionProps &

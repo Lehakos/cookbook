@@ -7,13 +7,13 @@ module.exports = {
       type: 'list',
       name: 'type',
       message: 'Выберите тип компонента',
-      choices: ['atoms', 'molecules', 'organisms', 'templates', 'pages']
+      choices: ['atoms', 'molecules', 'organisms', 'templates', 'pages'],
     },
     {
       type: 'input',
       name: 'path',
       message: 'Введите путь по которому расположить компонент',
-      default: 'components'
+      default: 'components',
     },
     {
       type: 'input',
@@ -26,41 +26,41 @@ module.exports = {
         }
 
         return 'Введите название';
-      }
+      },
     },
     {
       type: 'confirm',
       name: 'withTest',
       message: 'Добавить файл тестов?',
-      default: true
-    }
+      default: true,
+    },
   ],
-  actions: data => {
+  actions: (data) => {
     const files = [
       {
         type: 'add',
         path: `${componentPath}/{{pascalCase name}}.tsx`,
         templateFile: './component/templates/component.tsx.hbs',
-        abortOnFail: true
+        abortOnFail: true,
       },
       {
         type: 'add',
         path: `${componentPath}/{{pascalCase name}}.styles.ts`,
         templateFile: './component/templates/styles.ts.hbs',
-        abortOnFail: true
+        abortOnFail: true,
       },
       {
         type: 'add',
         path: `${componentPath}/{{pascalCase name}}.story.tsx`,
         templateFile: './component/templates/story.tsx.hbs',
-        abortOnFail: true
+        abortOnFail: true,
       },
       {
         type: 'add',
         path: `${componentPath}/index.ts`,
         templateFile: './component/templates/index.ts.hbs',
-        abortOnFail: true
-      }
+        abortOnFail: true,
+      },
     ];
 
     if (data.withTest) {
@@ -68,10 +68,10 @@ module.exports = {
         type: 'add',
         path: `${componentPath}/{{pascalCase name}}.test.tsx`,
         templateFile: './component/templates/test.tsx.hbs',
-        abortOnFail: true
+        abortOnFail: true,
       });
     }
 
     return files;
-  }
+  },
 };
