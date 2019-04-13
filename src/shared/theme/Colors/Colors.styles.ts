@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, ColorProps } from 'styled-system';
+import { typography, TypographyPropsWithAttrs } from 'shared/styledProps';
 
 import { typography, TypographyProps } from 'shared/styledProps';
 
@@ -32,6 +32,6 @@ export const Description = styled.div`
   padding: ${props => props.theme.space[4]}px;
 `;
 
-export const Text = styled.div<TypographyProps<HTMLDivElement>>`
+export const Text = styled.div<TypographyPropsWithAttrs<HTMLDivElement>>`
   ${typography}
 `;

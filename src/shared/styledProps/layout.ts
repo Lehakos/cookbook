@@ -2,6 +2,7 @@ import { HTMLAttributes } from 'react';
 import {
   compose,
   display,
+  width,
   maxWidth,
   minWidth,
   height,
@@ -11,6 +12,7 @@ import {
   verticalAlign,
   space,
   DisplayProps,
+  WidthProps,
   MaxWidthProps,
   MinWidthProps,
   HeightProps,
@@ -23,6 +25,7 @@ import {
 
 export const layout = compose(
   display,
+  width,
   maxWidth,
   minWidth,
   height,
@@ -33,8 +36,8 @@ export const layout = compose(
   space,
 );
 
-export type LayoutProps < T > = HTMLAttributes<T> &
-DisplayProps &
+type BaseLayoutProps = DisplayProps &
+WidthProps &
 MaxWidthProps &
 MinWidthProps &
 HeightProps &
@@ -43,3 +46,8 @@ MinHeightProps &
 SizeProps &
 VerticalAlignProps &
 SpaceProps;
+
+export type LayoutPropsWithAttrs < T > = HTMLAttributes<T> & BaseLayoutProps;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type LayoutProps = BaseLayoutProps & { [prop: string]: any };

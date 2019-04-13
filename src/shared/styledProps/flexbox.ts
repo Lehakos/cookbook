@@ -39,8 +39,7 @@ export const flexbox = compose(
   flexBasis,
 );
 
-export type FlexboxProps < T > = HTMLAttributes<T> &
-AlignItemsProps &
+type BaseFlexboxProps = AlignItemsProps &
 JustifyContentProps &
 FlexWrapProps &
 FlexDirectionProps &
@@ -51,3 +50,8 @@ JustifySelfProps &
 AlignSelfProps &
 OrderProps &
 FlexBasisProps;
+
+export type FlexboxPropsWithAttrs < T > = HTMLAttributes<T> & BaseFlexboxProps;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type FlexboxProps = BaseFlexboxProps & { [prop: string]: any };

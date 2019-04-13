@@ -1,3 +1,3 @@
-export { typography, TypographyProps } from './typography';
-export { layout, LayoutProps } from './layout';
-export { flexbox, FlexboxProps } from './flexbox';
+export { typography, TypographyProps, TypographyPropsWithAttrs } from './typography';
+export { layout, LayoutProps, LayoutPropsWithAttrs } from './layout';
+export { flexbox, FlexboxProps, FlexboxPropsWithAttrs } from './flexbox';
