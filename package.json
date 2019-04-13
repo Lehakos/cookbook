@@ -9,7 +9,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "generate": "plop --plopfile generators/index.js",
-    "publish:storybook": "git checkout gh-pages && git rebase master && yarn build-storybook && git add storybook-static && git commit -m 'chore(storybook): собран сторибук для публикации' && git subtree push --prefix storybook-static origin gh-pages && git checkout -"
+    "publish:storybook": "git checkout gh-pages && git rebase master && yarn build-storybook && git add storybook-static && git commit -m 'chore(storybook): собран сторибук для публикации' && git push origin `git subtree split --prefix storybook-static gh-pages`:gh-pages --force && git checkout -"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
