@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react';
 import {
   compose,
   fontFamily,
@@ -12,7 +11,7 @@ import {
   FontWeightProps,
   LineHeightProps,
   SpaceProps,
-  ColorProps,
+  ColorStyleProps,
 } from 'styled-system';
 
 export const typography = compose(
@@ -28,7 +27,5 @@ export type TypographyProps = FontFamilyProps &
 FontSizeProps &
 FontWeightProps &
 LineHeightProps &
-ColorProps &
-SpaceProps & { [prop: string]: any }; // eslint-disable-line @typescript-eslint/no-explicit-any
-
-export type TypographyPropsWithAttrs < T > = HTMLAttributes<T> & TypographyProps;
+ColorStyleProps &
+SpaceProps;

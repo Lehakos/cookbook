@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { typography, TypographyProps, TypographyPropsWithAttrs } from 'shared/styledProps';
+import { typography, TypographyProps } from 'shared/styledProps';
 
-export const Wrapper = styled.div<TypographyPropsWithAttrs<HTMLDivElement>>`
+export const Text = styled.div<TypographyProps>`
   ${typography}
 `;
 

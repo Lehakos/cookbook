@@ -2,14 +2,12 @@ import styled from 'styled-components';
 import { borders, BorderProps } from 'styled-system';
 
 import {
-  layout, LayoutPropsWithAttrs, flexbox, FlexboxPropsWithAttrs,
+  layout, LayoutProps, flexbox, FlexboxProps,
 } from 'shared/styledProps';
 
-type WrapperProps = BorderProps &
-LayoutPropsWithAttrs<HTMLDivElement> &
-FlexboxPropsWithAttrs<HTMLDivElement>;
+type WrapperProps = BorderProps & LayoutProps & FlexboxProps;
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Box = styled.div<WrapperProps>`
   display: flex;
 
   ${borders}

@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react';
 import {
   compose,
   alignItems,
@@ -39,7 +38,7 @@ export const flexbox = compose(
   flexBasis,
 );
 
-type BaseFlexboxProps = AlignItemsProps &
+export type FlexboxProps = AlignItemsProps &
 JustifyContentProps &
 FlexWrapProps &
 FlexDirectionProps &
@@ -50,8 +49,3 @@ JustifySelfProps &
 AlignSelfProps &
 OrderProps &
 FlexBasisProps;
-
-export type FlexboxPropsWithAttrs < T > = HTMLAttributes<T> & BaseFlexboxProps;
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type FlexboxProps = BaseFlexboxProps & { [prop: string]: any };

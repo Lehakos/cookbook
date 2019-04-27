@@ -3,7 +3,7 @@ import {
   color, ColorProps, flexDirection, FlexDirectionProps,
 } from 'styled-system';
 
-import { typography, TypographyPropsWithAttrs } from 'shared/styledProps';
+import { typography, TypographyProps } from 'shared/styledProps';
 
 export const Wrapper = styled.div<FlexDirectionProps>`
   ${flexDirection}
@@ -37,6 +37,6 @@ export const Description = styled.div`
   padding: ${props => props.theme.space[4]}px;
 `;
 
-export const Text = styled.div<TypographyPropsWithAttrs<HTMLDivElement>>`
+export const Text = styled.div<TypographyProps>`
   ${typography}
 `;
