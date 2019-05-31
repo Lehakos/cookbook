@@ -3,7 +3,7 @@ import { borders, BorderProps } from 'styled-system';
 
 import {
   layout, LayoutProps, flexbox, FlexboxProps,
-} from 'shared/styledProps';
+} from 'libs/styledProps';
 
 type WrapperProps = BorderProps & LayoutProps & FlexboxProps;
 
