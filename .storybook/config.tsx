@@ -6,7 +6,7 @@ import { withConsole } from '@storybook/addon-console';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import theme from 'shared/theme';
+import theme from 'libs/theme';
 
 import GlobalStyles from '../src/GlobalStyles';
 

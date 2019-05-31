@@ -3,7 +3,7 @@ import {
   color, ColorProps, flexDirection, FlexDirectionProps,
 } from 'styled-system';
 
-import { typography, TypographyProps } from 'shared/styledProps';
+import { typography, TypographyProps } from 'libs/styledProps';
 
 export const Wrapper = styled.div<FlexDirectionProps>`
   ${flexDirection}
