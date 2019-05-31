@@ -27,6 +27,8 @@
   "rules": {
     "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/indent": [1, 2],
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/prefer-interface": 0,
     "func-names": 0,
     "import/named": 0,
     "import/no-extraneous-dependencies": 0,
