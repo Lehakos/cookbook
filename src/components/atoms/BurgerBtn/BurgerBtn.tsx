@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useControlledProp } from 'libs/useControlledProp';
-import { StrictUnion } from 'libs/types';
+import { StrictUnion } from 'shared/types';
 
 import * as s from './BurgerBtn.styles';
 
