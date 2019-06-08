@@ -41,6 +41,11 @@ export const fontWeights: FontWeights = [300, 400, 600];
 type Borders = string[];
 export const borders: Borders = [`1px solid ${colors.grays[0]}`];
 
+export const fonts = {
+  primary: 'Open Sans, Verdana, Arial, sans-serif',
+};
+type Fonts = typeof fonts;
+
 export interface Theme {
   colors: Colors;
   space: Spaces;
@@ -51,6 +56,7 @@ export interface Theme {
   fontWeights: FontWeights;
   borders: Borders;
   sizes: Sizes;
+  fonts: Fonts;
 }
 
 const theme: Theme = {
@@ -63,6 +69,7 @@ const theme: Theme = {
   fontWeights,
   borders,
   sizes,
+  fonts,
 };
 
 export default theme;
