@@ -1,6 +1,17 @@
+import { darken, lighten } from 'polished';
+
+const primaryColor = '#F47983';
+const secondaryColor = '#50C6C3';
+
 export const colors = {
-  primary: '#F47983',
-  secondary: '#50c6c3',
+  primary: primaryColor,
+  primaryHover: darken(0.02)(primaryColor),
+  primaryActive: darken(0.05)(primaryColor),
+  primaryDisabled: lighten(0.07)(primaryColor),
+  secondary: secondaryColor,
+  secondaryHover: darken(0.04)(secondaryColor),
+  secondaryActive: darken(0.08)(secondaryColor),
+  secondaryDisabled: lighten(0.2)(secondaryColor),
   contrast: '#38618C',
   notes: '#F9ADA0',
   text: '#3D3E3C',
@@ -46,6 +57,9 @@ export const fonts = {
 };
 type Fonts = typeof fonts;
 
+export const zIndices = [0, 1, 10, 100, 1000, 10000];
+type ZIndices = typeof zIndices;
+
 export interface Theme {
   colors: Colors;
   space: Spaces;
@@ -57,6 +71,7 @@ export interface Theme {
   borders: Borders;
   sizes: Sizes;
   fonts: Fonts;
+  zIndices: ZIndices;
 }
 
 const theme: Theme = {
@@ -70,6 +85,7 @@ const theme: Theme = {
   borders,
   sizes,
   fonts,
+  zIndices,
 };
 
 export default theme;

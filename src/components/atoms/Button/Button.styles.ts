@@ -1,13 +1,7 @@
 import styled, { css } from 'styled-components';
-import { withProp, switchProp, prop } from 'styled-tools';
-import { darken, lighten } from 'polished';
+import { switchProp, prop } from 'styled-tools';
 
 export type Variant = 'primary' | 'secondary';
-
-const colorsMap = {
-  primary: 'theme.colors.primary',
-  secondary: 'theme.colors.secondary',
-};
 
 export const Wrapper = styled.button<{ variant: Variant }>`
   padding: ${prop<any>('theme.space.4')}px ${prop<any>('theme.space.6')}px;
@@ -26,37 +20,37 @@ export const Wrapper = styled.button<{ variant: Variant }>`
 
   ${switchProp('variant', {
     primary: css`
-      background: ${prop<any>(colorsMap.primary)};
+      background: ${prop<any>('theme.colors.primary')};
 
       transition: background-color 0.2s;
 
       &:hover {
-        background-color: ${withProp(colorsMap.primary, darken(0.02))};
+        background-color: ${prop<any>('theme.colors.primaryHover')};
       }
 
       &:active {
-        background-color: ${withProp(colorsMap.primary, darken(0.05))};
+        background-color: ${prop<any>('theme.colors.primaryActive')};
       }
 
       &[disabled] {
-        background-color: ${withProp(colorsMap.primary, lighten(0.07))};
+        background-color: ${prop<any>('theme.colors.primaryDisabled')};
       }
     `,
     secondary: css`
-      background: ${prop<any>(colorsMap.secondary)};
+      background: ${prop<any>('theme.colors.secondary')};
 
       transition: background-color 0.2s;
 
       &:hover {
-        background-color: ${withProp(colorsMap.secondary, darken(0.04))};
+        background-color: ${prop<any>('theme.colors.secondaryHover')};
       }
 
       &:active {
-        background-color: ${withProp(colorsMap.secondary, darken(0.08))};
+        background-color: ${prop<any>('theme.colors.secondaryActive')};
       }
 
       &[disabled] {
-        background-color: ${withProp(colorsMap.secondary, lighten(0.2))};
+        background-color: ${prop<any>('theme.colors.secondaryDisabled')};
       }
     `,
   })}
