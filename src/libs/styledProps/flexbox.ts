@@ -39,13 +39,13 @@ export const flexbox = compose(
 );
 
 export type FlexboxProps = AlignItemsProps &
-JustifyContentProps &
-FlexWrapProps &
-FlexDirectionProps &
-FlexProps &
-AlignContentProps &
-JustifyItemsProps &
-JustifySelfProps &
-AlignSelfProps &
-OrderProps &
-FlexBasisProps;
+  JustifyContentProps &
+  FlexWrapProps &
+  FlexDirectionProps &
+  FlexProps &
+  AlignContentProps &
+  JustifyItemsProps &
+  JustifySelfProps &
+  AlignSelfProps &
+  OrderProps &
+  FlexBasisProps;

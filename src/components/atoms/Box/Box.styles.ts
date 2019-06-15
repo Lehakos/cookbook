@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { borders, BorderProps } from 'styled-system';
 
-import {
-  layout, LayoutProps, flexbox, FlexboxProps,
-} from 'libs/styledProps';
+import { layout, LayoutProps, flexbox, FlexboxProps } from 'libs/styledProps';
 
 type WrapperProps = BorderProps & LayoutProps & FlexboxProps;
 

@@ -58,7 +58,8 @@ export const Box = styled.span<{ isOpen: boolean }>`
   &::after {
     bottom: 0;
 
-    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: bottom 0.1s 0.25s ease-in,
+      transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
   ${ifProp(
@@ -86,7 +87,8 @@ export const Box = styled.span<{ isOpen: boolean }>`
 
         transform: translateY(50%) rotate(-90deg);
 
-        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: bottom 0.1s ease-out,
+          transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
     `,
   )}

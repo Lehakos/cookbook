@@ -6,11 +6,8 @@ import Icon, { icons } from './Icon';
 
 const stories = storiesOf('Atoms|Icon', module);
 
-icons.forEach((icon) => {
-  stories.add(
-    icon,
-    () => (
-      <Icon fill={color('fill', '#000')} size={number('size', 1)} icon={icon} />
-    ),
-  );
+icons.forEach(icon => {
+  stories.add(icon, () => (
+    <Icon fill={color('fill', '#000')} size={number('size', 1)} icon={icon} />
+  ));
 });

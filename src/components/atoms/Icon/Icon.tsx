@@ -1,11 +1,15 @@
-import React, { useEffect, useReducer, Fragment, ComponentType, ReactElement } from 'react';
-import { SizeProps } from 'styled-system'
+import React, {
+  useEffect,
+  useReducer,
+  Fragment,
+  ComponentType,
+  ReactElement,
+} from 'react';
+import { SizeProps } from 'styled-system';
 
-import * as s from './Icon.styles'
+import * as s from './Icon.styles';
 
-export const icons = [
-  'plus'
-] as const;
+export const icons = ['plus'] as const;
 
 type Props = {
   icon: typeof icons[number];
@@ -17,20 +21,23 @@ type Props = {
    * @default 'currentColor'
    */
   fill?: string;
-} & SizeProps
+} & SizeProps;
 
 type State = {
   loading: boolean;
   IconComponent: ComponentType | null;
 };
 
-const initialState: State = { loading: true, IconComponent: null }
+const initialState: State = { loading: true, IconComponent: null };
 
 type LoadStartAction = { type: 'loadIconStart' };
 type LoadSuccessAction = { type: 'loadIconSuccess'; payload: ComponentType };
 type LoadFailAction = { type: 'loadIconFail' };
 
-const reducer = (state: State, action: LoadStartAction | LoadSuccessAction | LoadFailAction) => {
+const reducer = (
+  state: State,
+  action: LoadStartAction | LoadSuccessAction | LoadFailAction,
+) => {
   switch (action.type) {
     case 'loadIconStart':
       return {

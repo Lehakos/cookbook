@@ -24,8 +24,8 @@ export const typography = compose(
 );
 
 export type TypographyProps = FontFamilyProps &
-FontSizeProps &
-FontWeightProps &
-LineHeightProps &
-ColorStyleProps &
-SpaceProps;
+  FontSizeProps &
+  FontWeightProps &
+  LineHeightProps &
+  ColorStyleProps &
+  SpaceProps;

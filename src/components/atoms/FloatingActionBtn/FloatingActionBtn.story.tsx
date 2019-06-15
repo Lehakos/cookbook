@@ -7,7 +7,10 @@ import FloatingActionBtn from './FloatingActionBtn';
 const stories = storiesOf('Atoms|FloatingActionBtn', module);
 
 stories.add('Default', () => (
-  <FloatingActionBtn ariaLabel="plus" fixedPosition={boolean('fixedPosition', false)}>
+  <FloatingActionBtn
+    ariaLabel="plus"
+    fixedPosition={boolean('fixedPosition', false)}
+  >
     +
   </FloatingActionBtn>
 ));

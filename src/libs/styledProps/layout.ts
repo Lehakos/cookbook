@@ -36,12 +36,12 @@ export const layout = compose(
 );
 
 export type LayoutProps = DisplayProps &
-WidthProps &
-MaxWidthProps &
-MinWidthProps &
-HeightProps &
-MaxHeightProps &
-MinHeightProps &
-SizeProps &
-VerticalAlignProps &
-SpaceProps;
+  WidthProps &
+  MaxWidthProps &
+  MinWidthProps &
+  HeightProps &
+  MaxHeightProps &
+  MinHeightProps &
+  SizeProps &
+  VerticalAlignProps &
+  SpaceProps;

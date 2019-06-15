@@ -6,11 +6,12 @@ import Color from './Colors';
 
 const stories = storiesOf('Styles|Color', module);
 
-const colorsArray: { key: string; value: string | readonly string[] }[] = Object.entries(colors).map(
-  ([key, value]) => ({
-    key,
-    value,
-  }),
-);
+const colorsArray: {
+  key: string;
+  value: string | readonly string[];
+}[] = Object.entries(colors).map(([key, value]) => ({
+  key,
+  value,
+}));
 
 stories.add('Default', () => <Color colors={colorsArray} />);

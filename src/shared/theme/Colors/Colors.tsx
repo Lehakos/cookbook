@@ -13,9 +13,7 @@ interface Props {
   colors: { key: string; value: string | readonly string[] }[];
 }
 
-const ColorItem: React.FunctionComponent<ColorItemProps> = function ({
-  color,
-}) {
+const ColorItem: React.FunctionComponent<ColorItemProps> = function({ color }) {
   return (
     <s.Color>
       <s.ColorBox bg={color.key} />
@@ -31,7 +29,7 @@ const ColorItem: React.FunctionComponent<ColorItemProps> = function ({
   );
 };
 
-const Color: React.FunctionComponent<Props> = function ({ colors }) {
+const Color: React.FunctionComponent<Props> = function({ colors }) {
   return (
     <s.Wrapper flexDirection="column">
       {colors.map(color => (
@@ -40,7 +38,9 @@ const Color: React.FunctionComponent<Props> = function ({ colors }) {
             <s.Wrapper flexDirection="row">
               {color.value.map((nestedColor, ind) => (
                 <s.Item key={nestedColor}>
-                  <ColorItem color={{ key: `${color.key}.${ind}`, value: nestedColor }} />
+                  <ColorItem
+                    color={{ key: `${color.key}.${ind}`, value: nestedColor }}
+                  />
                 </s.Item>
               ))}
             </s.Wrapper>

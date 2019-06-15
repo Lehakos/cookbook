@@ -9,7 +9,13 @@ const stories = storiesOf('Atoms|Text', module);
 stories
   .add('No props', () => <Text>Some text</Text>)
   .add('Color prop', () => (
-    <Text color={select('color', ['primary', 'secondary', 'contrast', 'text'], 'primary')}>
+    <Text
+      color={select(
+        'color',
+        ['primary', 'secondary', 'contrast', 'text'],
+        'primary',
+      )}
+    >
       Some text
     </Text>
   ))

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import * as s from "./FloatingActionBtn.styles";
+import * as s from './FloatingActionBtn.styles';
 
 interface Props {
   disabled?: boolean;
@@ -19,7 +19,12 @@ const FloatingActionBtn: React.FunctionComponent<Props> = function({
   ...rest
 }) {
   return (
-    <s.Wrapper {...rest} aria-label={ariaLabel} fixedPosition={fixedPosition} disabled={disabled}>
+    <s.Wrapper
+      {...rest}
+      aria-label={ariaLabel}
+      fixedPosition={fixedPosition}
+      disabled={disabled}
+    >
       {children}
     </s.Wrapper>
   );

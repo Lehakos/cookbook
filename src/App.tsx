@@ -5,7 +5,7 @@ import theme from 'shared/theme';
 
 import GlobalStyles from './GlobalStyles';
 
-const App: React.FunctionComponent<{}> = function () {
+const App: React.FunctionComponent<{}> = function() {
   return (
     <ThemeProvider theme={theme}>
       <div>

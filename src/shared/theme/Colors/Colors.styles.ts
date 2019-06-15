@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import {
-  color, ColorProps, flexDirection, FlexDirectionProps,
+  color,
+  ColorProps,
+  flexDirection,
+  FlexDirectionProps,
 } from 'styled-system';
 
 import { typography, TypographyProps } from 'libs/styledProps';

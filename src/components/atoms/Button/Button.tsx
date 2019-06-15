@@ -7,7 +7,7 @@ interface Props {
   disabled?: boolean;
 }
 
-const Button: React.FunctionComponent<Props> = function ({
+const Button: React.FunctionComponent<Props> = function({
   children,
   disabled,
   variant = 'primary',

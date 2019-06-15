@@ -6,7 +6,7 @@ interface Props {
   shadows: readonly string[];
 }
 
-const Shadows: React.FunctionComponent<Props> = function ({ shadows }) {
+const Shadows: React.FunctionComponent<Props> = function({ shadows }) {
   return (
     <s.Wrapper>
       {shadows.map((shadow, index) => (

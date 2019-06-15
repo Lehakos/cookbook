@@ -38,9 +38,7 @@ type Heights = typeof heights;
 export const fontSizes = [12, 14, 16, 18, 20, 22, 24] as const;
 type FontSizes = typeof fontSizes;
 
-export const shadows = [
-  '0 0 4px 0 rgba(0, 0, 0, .2)',
-] as const;
+export const shadows = ['0 0 4px 0 rgba(0, 0, 0, .2)'] as const;
 type Shadows = typeof shadows;
 
 export const radii = [2, 4] as const;

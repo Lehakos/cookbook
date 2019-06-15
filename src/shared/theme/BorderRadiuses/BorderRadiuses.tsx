@@ -6,19 +6,15 @@ interface Props {
   radiuses: readonly number[];
 }
 
-const BorderRadiuses: React.FunctionComponent<Props> = function ({ radiuses }) {
+const BorderRadiuses: React.FunctionComponent<Props> = function({ radiuses }) {
   return (
     <s.Wrapper>
       {radiuses.map((value, index) => (
         <s.Item key={value}>
           <s.BorderRadius borderRadius={index}>
-            <div>
-              BorderRadius index: {index}
-            </div>
+            <div>BorderRadius index: {index}</div>
             <br />
-            <div>
-              BorderRadius value: {value}px
-            </div>
+            <div>BorderRadius value: {value}px</div>
           </s.BorderRadius>
         </s.Item>
       ))}
