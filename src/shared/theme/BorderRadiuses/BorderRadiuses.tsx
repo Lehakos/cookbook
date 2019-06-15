@@ -3,7 +3,7 @@ import React from 'react';
 import * as s from './BorderRadiuses.styles';
 
 interface Props {
-  radiuses: number[];
+  radiuses: readonly number[];
 }
 
 const BorderRadiuses: React.FunctionComponent<Props> = function ({ radiuses }) {
@@ -13,15 +13,11 @@ const BorderRadiuses: React.FunctionComponent<Props> = function ({ radiuses }) {
         <s.Item key={value}>
           <s.BorderRadius borderRadius={index}>
             <div>
-              BorderRadius index:
-              {index}
+              BorderRadius index: {index}
             </div>
             <br />
             <div>
-              BorderRadius value:
-              {' '}
-              {value}
-              px
+              BorderRadius value: {value}px
             </div>
           </s.BorderRadius>
         </s.Item>

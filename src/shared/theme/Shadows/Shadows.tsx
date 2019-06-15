@@ -3,7 +3,7 @@ import React from 'react';
 import * as s from './Shadows.styles';
 
 interface Props {
-  shadows: string[];
+  shadows: readonly string[];
 }
 
 const Shadows: React.FunctionComponent<Props> = function ({ shadows }) {

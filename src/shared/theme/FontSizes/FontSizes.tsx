@@ -3,7 +3,7 @@ import React from 'react';
 import * as s from './FontSizes.styles';
 
 interface Props {
-  fontSizes: number[];
+  fontSizes: readonly number[];
 }
 
 const FontSizes: React.FunctionComponent<Props> = function ({ fontSizes }) {
@@ -14,7 +14,7 @@ const FontSizes: React.FunctionComponent<Props> = function ({ fontSizes }) {
           FontSize index:
           {' '}
           {index}
-; FontSize value:
+          ; FontSize value:
           {' '}
           {value}
           px

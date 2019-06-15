@@ -6,7 +6,7 @@ import Color from './Colors';
 
 const stories = storiesOf('Styles|Color', module);
 
-const colorsArray: { key: string; value: string | string[] }[] = Object.entries(colors).map(
+const colorsArray: { key: string; value: string | readonly string[] }[] = Object.entries(colors).map(
   ([key, value]) => ({
     key,
     value,

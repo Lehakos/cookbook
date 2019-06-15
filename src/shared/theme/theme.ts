@@ -22,42 +22,42 @@ export const colors = {
     '#979E9D',
     '#848A89',
     '#717676',
-  ],
+  ] as const,
 };
 type Colors = typeof colors;
 
-export const space = [0, 2, 4, 8, 12, 16, 24, 32, 48];
+export const space = [0, 2, 4, 8, 12, 16, 24, 32, 48] as const;
 type Spaces = typeof space;
 
-export const sizes = [24, 32, 48, 64, 96, 128, 256];
+export const sizes = [24, 32, 48, 64, 96, 128, 256] as const;
 type Sizes = typeof sizes;
 
 export const heights = sizes;
 type Heights = typeof heights;
 
-type FontSizes = number[];
-export const fontSizes = [12, 14, 16, 18, 20, 22, 24] as FontSizes;
+export const fontSizes = [12, 14, 16, 18, 20, 22, 24] as const;
+type FontSizes = typeof fontSizes;
 
-type Shadows = string[];
-export const shadows: Shadows = [
+export const shadows = [
   '0 0 4px 0 rgba(0, 0, 0, .2)',
-];
+] as const;
+type Shadows = typeof shadows;
 
-type Radii = number[];
-export const radii: Radii = [2, 4];
+export const radii = [2, 4] as const;
+type Radii = typeof radii;
 
-type FontWeights = number[];
-export const fontWeights: FontWeights = [300, 400, 600];
+export const fontWeights = [300, 400, 600] as const;
+type FontWeights = typeof fontWeights;
 
-type Borders = string[];
-export const borders: Borders = [`1px solid ${colors.grays[0]}`];
+export const borders = [`1px solid ${colors.grays[0]}`] as const;
+type Borders = typeof borders;
 
 export const fonts = {
   primary: 'Open Sans, Verdana, Arial, sans-serif',
 };
 type Fonts = typeof fonts;
 
-export const zIndices = [0, 1, 10, 100, 1000, 10000];
+export const zIndices = [0, 1, 10, 100, 1000, 10000] as const;
 type ZIndices = typeof zIndices;
 
 export interface Theme {

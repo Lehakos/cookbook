@@ -10,7 +10,7 @@ interface ColorItemProps {
 }
 
 interface Props {
-  colors: { key: string; value: string | string[] }[];
+  colors: { key: string; value: string | readonly string[] }[];
 }
 
 const ColorItem: React.FunctionComponent<ColorItemProps> = function ({

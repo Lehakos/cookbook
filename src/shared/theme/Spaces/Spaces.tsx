@@ -3,7 +3,7 @@ import React from 'react';
 import * as s from './Spaces.styles';
 
 interface Props {
-  spaces: number[];
+  spaces: readonly number[];
 }
 
 const Spaces: React.FunctionComponent<Props> = function ({ spaces }) {
@@ -15,7 +15,7 @@ const Spaces: React.FunctionComponent<Props> = function ({ spaces }) {
             Space index:
             {' '}
             {index}
-; Space value:
+            ; Space value:
             {' '}
             {value}
             px
