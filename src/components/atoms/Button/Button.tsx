@@ -12,9 +12,10 @@ const Button: React.FunctionComponent<Props> = function ({
   children,
   disabled,
   variant = 'primary',
+  ...rest
 }) {
   return (
-    <s.Wrapper disabled={disabled} variant={variant}>
+    <s.Wrapper {...rest} disabled={disabled} variant={variant}>
       {children}
     </s.Wrapper>
   );
