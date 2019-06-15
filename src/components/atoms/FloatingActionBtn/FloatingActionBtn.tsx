@@ -1,9 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from "react";
 
-import * as s from './FloatingActionBtn.styles';
+import * as s from "./FloatingActionBtn.styles";
 
 interface Props {
-  children: ReactNode;
   disabled?: boolean;
   ariaLabel: string;
   /**
@@ -12,7 +11,7 @@ interface Props {
   fixedPosition?: boolean;
 }
 
-const FloatingActionBtn: React.FunctionComponent<Props> = function ({
+const FloatingActionBtn: React.FunctionComponent<Props> = function({
   children,
   disabled,
   ariaLabel,

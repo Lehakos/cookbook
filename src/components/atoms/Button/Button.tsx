@@ -1,9 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 import * as s from './Button.styles';
 
 interface Props {
-  children?: ReactNode;
   variant?: s.Variant;
   disabled?: boolean;
 }
