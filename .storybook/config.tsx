@@ -19,6 +19,7 @@ addParameters({
     sortStoriesByKind: true,
     hierarchyRootSeparator: '|',
     hierarchySeparator: '/',
+    addonPanelInRight: true,
   },
 });
 
