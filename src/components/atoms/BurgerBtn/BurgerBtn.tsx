@@ -8,7 +8,7 @@ import * as s from './BurgerBtn.styles';
 type BaseProps = {
   /**
    * Описание того что делает эта кнопка для скринридеров.
-   * @default 'Menu'
+   * @default 'Toggle menu'
    */
   ariaLabel?: string;
   /**
@@ -26,7 +26,7 @@ type ControlledIsOpen = {
 type Props = BaseProps & StrictUnion<ControlledIsOpen | {}>;
 
 export default ({
-  ariaLabel = 'Menu',
+  ariaLabel = 'Toggle menu',
   ariaControls,
   initialIsOpen = false,
   isOpen,
