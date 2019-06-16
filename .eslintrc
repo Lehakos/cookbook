@@ -50,6 +50,7 @@
     "import/no-unresolved": 0,
     "import/prefer-default-export": 0,
     "implicit-arrow-linebreak": "off",
+    "no-nested-ternary": 0,
     "prefer-destructuring": 0,
     "prettier/prettier": [
       "error",
