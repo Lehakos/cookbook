@@ -25,7 +25,7 @@ type ControlledIsOpen = {
 
 type Props = BaseProps & StrictUnion<ControlledIsOpen | {}>;
 
-export default ({
+const BurgerBtn = ({
   ariaLabel = 'Toggle menu',
   ariaControls,
   initialIsOpen = false,
@@ -55,3 +55,5 @@ export default ({
     </s.Wrapper>
   );
 };
+
+export default BurgerBtn;

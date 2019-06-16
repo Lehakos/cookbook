@@ -14,10 +14,12 @@ export const icons = ['plus'] as const;
 type Props = {
   icon: typeof icons[number];
   /**
+   * Элемент, который показывается, пока иконка грузится
    * @default <Fragment>Loading...</Fragment>
    */
   fallback?: ReactElement;
   /**
+   * Цвет иконки
    * @default 'currentColor'
    */
   fill?: string;
@@ -28,7 +30,7 @@ type State = {
   IconComponent: ComponentType | null;
 };
 
-const initialState: State = { loading: true, IconComponent: null };
+const initialState: State = { loading: false, IconComponent: null };
 
 type LoadStartAction = { type: 'loadIconStart' };
 type LoadSuccessAction = { type: 'loadIconSuccess'; payload: ComponentType };
@@ -72,7 +74,9 @@ const Icon = ({
     dispatch({ type: 'loadIconStart' });
 
     try {
-      const res = await import(`./svg/${icon}.svg`);
+      const res = await import(
+        /* webpackChunkName: "icon", webpackPrefetch: true */ `./svg/${icon}.svg`
+      );
 
       if (res.ReactComponent) {
         dispatch({ type: 'loadIconSuccess', payload: res.ReactComponent });

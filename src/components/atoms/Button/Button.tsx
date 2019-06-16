@@ -3,6 +3,10 @@ import React from 'react';
 import * as s from './Button.styles';
 
 interface Props {
+  /**
+   * Вариант оформления кнопки
+   * @default 'primary'
+   */
   variant?: s.Variant;
   disabled?: boolean;
 }
