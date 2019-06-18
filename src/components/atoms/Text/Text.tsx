@@ -1,3 +1,9 @@
-import * as s from './Text.styles';
+import styled from 'styled-components';
 
-export default s.Text;
+import { typography, TypographyProps } from 'libs/styledProps';
+
+const Text = styled.div<TypographyProps>`
+  ${typography}
+`;
+
+export default Text;

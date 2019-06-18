@@ -1,3 +1,16 @@
-import * as s from './Box.styles';
+import styled from 'styled-components';
+import { borders, BorderProps } from 'styled-system';
 
-export default s.Box;
+import { layout, LayoutProps, flexbox, FlexboxProps } from 'libs/styledProps';
+
+type WrapperProps = BorderProps & LayoutProps & FlexboxProps;
+
+const Box = styled.div<WrapperProps>`
+  display: flex;
+
+  ${borders}
+  ${layout}
+  ${flexbox}
+`;
+
+export default Box;
