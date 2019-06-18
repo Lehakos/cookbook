@@ -9,7 +9,7 @@ interface Size {
   height: number;
 }
 
-type Props = {
+export type Props = {
   src: string;
   alt: string;
   responsive?: boolean;
@@ -18,11 +18,10 @@ type Props = {
 interface State {
   error: boolean;
   loaded: boolean;
-  computedSize: Size;
 }
 
 type LoadImageStartAction = { type: 'loadImageStart' };
-type LoadImageSuccessAction = { type: 'loadImageSuccess'; payload: Size };
+type LoadImageSuccessAction = { type: 'loadImageSuccess' };
 type LoadImageFailAction = { type: 'loadImageFail' };
 
 const reducer = (
@@ -41,7 +40,6 @@ const reducer = (
       return {
         ...state,
         loaded: true,
-        computedSize: action.payload,
       };
 
     case 'loadImageFail':
@@ -55,8 +53,8 @@ const reducer = (
   }
 };
 
-const DEFAULT_WIDTH = 480;
-const DEFAULT_HEIGHT = 360;
+export const DEFAULT_WIDTH = 480;
+export const DEFAULT_HEIGHT = 360;
 
 const ImageLoader: React.FunctionComponent<Props> = function({
   width,
@@ -68,10 +66,6 @@ const ImageLoader: React.FunctionComponent<Props> = function({
   const initialState: State = {
     loaded: false,
     error: false,
-    computedSize: {
-      width: width || DEFAULT_WIDTH,
-      height: height || DEFAULT_HEIGHT,
-    },
   };
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -82,45 +76,55 @@ const ImageLoader: React.FunctionComponent<Props> = function({
 
     const img = new Image();
 
-    img.addEventListener('load', () => {
+    const loadHandler = () => {
       if (currentSrc !== src) {
         return;
       }
-      const computedSize = {
-        width: width || img.naturalWidth,
-        height: height || img.naturalHeight,
-      };
-      dispatch({ type: 'loadImageSuccess', payload: computedSize });
-    });
 
-    img.addEventListener('error', e => {
+      dispatch({ type: 'loadImageSuccess' });
+    };
+
+    const errorHandler = (e: ErrorEvent) => {
       if (currentSrc !== src) {
         return;
       }
-      console.error(e.error); // eslint-disable-line
+      if (process.env.NODE_ENV !== 'test') {
+        console.error(e.error); // eslint-disable-line
+      }
       dispatch({ type: 'loadImageFail' });
-    });
+    };
+
+    img.addEventListener('load', loadHandler);
+    img.addEventListener('error', errorHandler);
 
     img.src = src;
+
+    return () => {
+      img.removeEventListener('load', loadHandler);
+      img.removeEventListener('error', errorHandler);
+    };
   };
 
   useEffect(() => {
-    loadImage();
+    return loadImage();
   }, [src]);
 
-  const { loaded, error, computedSize } = state;
-  const showImageSize = !error && !loaded;
-  const showImage = !error && loaded;
+  const { loaded, error } = state;
+  const computedWidth = width || DEFAULT_WIDTH;
+  const computedHeight = height || DEFAULT_HEIGHT;
 
   const getWidth = () => {
     if (responsive) return '100%';
-    return `${computedSize.width}px`;
+    return `${computedWidth}px`;
   };
 
   const getHeight = () => {
-    if (!responsive || !loaded) return `${computedSize.height}px`;
+    if (!responsive || !loaded) return `${computedHeight}px`;
     return 'auto';
   };
+
+  const showImageSize = !error && !loaded;
+  const showImage = !error && loaded;
 
   return (
     <s.Wrapper ref={wrapperRef} width={getWidth()} height={getHeight()}>
@@ -133,7 +137,7 @@ const ImageLoader: React.FunctionComponent<Props> = function({
       {showImage && <s.Img src={src} alt={alt} />}
       {showImageSize && (
         <s.Size aria-hidden>
-          {computedSize.width} x {computedSize.height}
+          {computedWidth} x {computedHeight}
         </s.Size>
       )}
     </s.Wrapper>

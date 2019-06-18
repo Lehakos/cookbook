@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> правильно отображается 1`] = `
+.c0 {
+  padding: 12px 24px;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.05em;
+  -moz-letter-spacing: 0.05em;
+  -ms-letter-spacing: 0.05em;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #F47983;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.c0[disabled] {
+  cursor: default;
+}
+
+.c0:hover {
+  background-color: #f3707a;
+}
+
+.c0:active {
+  background-color: #f2616d;
+}
+
+.c0[disabled] {
+  background-color: #f79aa2;
+}
+
+<button
+  class="c0"
+/>
+`;

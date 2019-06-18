@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FloatingActionBtn /> правильно отображается 1`] = `
+.c0 {
+  height: 64px;
+  width: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding: 0;
+  border: none;
+  color: #fff;
+  background-color: #F47983;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,.2);
+  cursor: pointer;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+}
+
+.c0:hover {
+  background-color: #f3707a;
+}
+
+.c0:active {
+  background-color: #f2616d;
+}
+
+.c0[disabled] {
+  background-color: #f79aa2;
+  cursor: default;
+}
+
+<button
+  aria-label="Plus"
+  class="c0"
+>
+  +
+</button>
+`;
