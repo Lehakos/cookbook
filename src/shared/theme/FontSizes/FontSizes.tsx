@@ -3,7 +3,7 @@ import React from 'react';
 import * as s from './FontSizes.styles';
 
 interface Props {
-  fontSizes: readonly number[];
+  fontSizes: readonly string[];
 }
 
 const FontSizes: React.FunctionComponent<Props> = function({ fontSizes }) {
@@ -11,7 +11,7 @@ const FontSizes: React.FunctionComponent<Props> = function({ fontSizes }) {
     <s.Wrapper>
       {fontSizes.map((value, index) => (
         <s.FontSize fontSize={index} key={value}>
-          FontSize index: {index}; FontSize value: {value}px
+          FontSize index: {index}; FontSize value: {value}
         </s.FontSize>
       ))}
     </s.Wrapper>

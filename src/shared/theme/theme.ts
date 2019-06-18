@@ -35,7 +35,14 @@ type Sizes = typeof sizes;
 export const heights = sizes;
 type Heights = typeof heights;
 
-export const fontSizes = [12, 14, 16, 18, 20, 22, 24] as const;
+export const fontSizes = [
+  '0.75rem', // 12px
+  '0.875rem', // 14px
+  '1rem', // 16px
+  '1.25rem', // 20px
+  '1.5rem', // 24px
+  '2rem', // 32px
+] as const;
 type FontSizes = typeof fontSizes;
 
 export const shadows = ['0 0 4px 0 rgba(0, 0, 0, .2)'] as const;
