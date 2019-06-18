@@ -5,9 +5,5 @@ import {{ pascalCase name }} from './{{ pascalCase name }}';
 
 const stories = storiesOf('{{ sentenceCase type }}|{{ pascalCase name }}', module);
 
-stories.add(
-  'Default',
-  () => (
-    <{{ pascalCase name }} />
-  ),
+stories.add('Default', () => (<{{ pascalCase name }} />),
 );
