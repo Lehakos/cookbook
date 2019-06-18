@@ -3,6 +3,10 @@ import 'normalize.css';
 import { prop } from 'styled-tools';
 
 const GlobalStyle = createGlobalStyle`
+  html {
+    line-height: 1.25;
+  }
+
   body {
     font-family: ${prop<any>('theme.fonts.primary')};
   }
