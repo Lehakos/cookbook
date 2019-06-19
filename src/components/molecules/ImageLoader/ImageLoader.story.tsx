@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import ImageLoader from './ImageLoader';
 
-const stories = storiesOf('Atoms|ImageLoader', module);
+const stories = storiesOf('Molecules|ImageLoader', module);
 
 stories
   .add('Fixed size', () => (

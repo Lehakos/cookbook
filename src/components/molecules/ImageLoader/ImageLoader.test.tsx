@@ -3,17 +3,15 @@ import { waitForElement, fireEvent } from '@testing-library/react';
 
 import { render } from 'libs/testHelpers';
 
-import ImageLoader, {
-  Props,
-  DEFAULT_HEIGHT,
-  DEFAULT_WIDTH,
-} from './ImageLoader';
+import ImageLoader, { Props } from './ImageLoader';
 
 const DESCRIPTION = 'Альтернативный текст';
 const LOAD_FAILURE_SRC = 'LOAD_FAILURE_SRC';
 const LOAD_SUCCESS_SRC = 'LOAD_SUCCESS_SRC';
 const WIDTH = 640;
 const HEIGHT = 480;
+const NATURAL_WIDTH = 100;
+const NATURAL_HEIGHT = 100;
 
 const renderComp = (props: Partial<Props> = {}) => {
   const defaultProps: Props = {
@@ -40,6 +38,18 @@ describe('<ImageLoader />', () => {
         } else if (src === LOAD_SUCCESS_SRC) {
           setTimeout(() => fireEvent(this, new Event('load')));
         }
+      },
+    });
+
+    Object.defineProperty((global as any).Image.prototype, 'naturalWidth', {
+      get() {
+        return NATURAL_WIDTH;
+      },
+    });
+
+    Object.defineProperty((global as any).Image.prototype, 'naturalHeight', {
+      get() {
+        return NATURAL_HEIGHT;
       },
     });
   });
@@ -70,23 +80,13 @@ describe('<ImageLoader />', () => {
   });
 
   describe('если картинка грузится', () => {
-    describe('и переданы пропсы width и height', () => {
-      it('показывает заглушку с этими размерами', () => {
-        const { queryByText } = renderComp();
-        expect(queryByText(`${WIDTH} x ${HEIGHT}`)).toBeTruthy();
-      });
-    });
+    it('показывает заглушку', () => {
+      const { queryByText, queryByAltText } = renderComp();
+      const altEl = queryByText(DESCRIPTION);
+      const imgEl = queryByAltText(DESCRIPTION);
 
-    describe('и не переданы пропсы width и height', () => {
-      it('показывает заглушку с дефолтными размерами', () => {
-        const { queryByText } = renderComp({
-          width: undefined,
-          height: undefined,
-        });
-        expect(
-          queryByText(`${DEFAULT_WIDTH} x ${DEFAULT_HEIGHT}`),
-        ).toBeTruthy();
-      });
+      expect(altEl).toBe(null);
+      expect(imgEl).toBe(null);
     });
   });
 });

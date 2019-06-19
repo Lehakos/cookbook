@@ -1,27 +1,30 @@
-import React, { useRef, useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 
+import ImagePlaceholder, {
+  Props as ImagePlaceholderProps,
+} from 'components/atoms/ImagePlaceholder';
 import { StrictUnion } from 'shared/types';
 
 import * as s from './ImageLoader.styles';
 
-interface Size {
+type Size = {
   width: number;
   height: number;
-}
+};
 
 export type Props = {
   src: string;
   alt: string;
-  responsive?: boolean;
-} & StrictUnion<Size | {}>;
+} & ImagePlaceholderProps;
 
 interface State {
   error: boolean;
   loaded: boolean;
+  computedSize: StrictUnion<Size | {}>;
 }
 
 type LoadImageStartAction = { type: 'loadImageStart' };
-type LoadImageSuccessAction = { type: 'loadImageSuccess' };
+type LoadImageSuccessAction = { type: 'loadImageSuccess'; payload: Size };
 type LoadImageFailAction = { type: 'loadImageFail' };
 
 const reducer = (
@@ -40,6 +43,7 @@ const reducer = (
       return {
         ...state,
         loaded: true,
+        computedSize: action.payload,
       };
 
     case 'loadImageFail':
@@ -53,21 +57,21 @@ const reducer = (
   }
 };
 
-export const DEFAULT_WIDTH = 480;
-export const DEFAULT_HEIGHT = 360;
-
 const ImageLoader: React.FunctionComponent<Props> = function({
-  width,
-  height,
   src,
   alt,
+  width,
+  height,
   responsive,
 }) {
   const initialState: State = {
     loaded: false,
     error: false,
+    computedSize:
+      typeof width === 'number' && typeof height === 'number'
+        ? { width, height }
+        : {},
   };
-  const wrapperRef = useRef<HTMLDivElement>(null);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const loadImage = () => {
@@ -81,7 +85,12 @@ const ImageLoader: React.FunctionComponent<Props> = function({
         return;
       }
 
-      dispatch({ type: 'loadImageSuccess' });
+      const computedSize = {
+        width: width || img.naturalWidth,
+        height: height || img.naturalHeight,
+      };
+
+      dispatch({ type: 'loadImageSuccess', payload: computedSize });
     };
 
     const errorHandler = (e: ErrorEvent) => {
@@ -109,25 +118,11 @@ const ImageLoader: React.FunctionComponent<Props> = function({
     return loadImage();
   }, [src]);
 
-  const { loaded, error } = state;
-  const computedWidth = width || DEFAULT_WIDTH;
-  const computedHeight = height || DEFAULT_HEIGHT;
-
-  const getWidth = () => {
-    if (responsive) return '100%';
-    return `${computedWidth}px`;
-  };
-
-  const getHeight = () => {
-    if (!responsive || !loaded) return `${computedHeight}px`;
-    return 'auto';
-  };
-
-  const showImageSize = !error && !loaded;
+  const { loaded, error, computedSize } = state;
   const showImage = !error && loaded;
 
   return (
-    <s.Wrapper ref={wrapperRef} width={getWidth()} height={getHeight()}>
+    <ImagePlaceholder {...computedSize} responsive={responsive}>
       {error && (
         <div>
           Fail to load image. Here is a text description:
@@ -135,12 +130,7 @@ const ImageLoader: React.FunctionComponent<Props> = function({
         </div>
       )}
       {showImage && <s.Img src={src} alt={alt} />}
-      {showImageSize && (
-        <s.Size aria-hidden>
-          {computedWidth} x {computedHeight}
-        </s.Size>
-      )}
-    </s.Wrapper>
+    </ImagePlaceholder>
   );
 };
 
