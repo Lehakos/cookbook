@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ImagePlaceholder /> правильно отображается 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  width: 480px;
+  height: 360px;
+  text-align: center;
+  background-color: #CFD8D7;
+}
+
+.c1 {
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.1em;
+  -moz-letter-spacing: 0.1em;
+  -ms-letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
+}
+
+<div
+  class="c0"
+  height="360px"
+  width="480px"
+>
+  <span
+    aria-hidden="true"
+    class="c1"
+  >
+    480
+     x 
+    360
+  </span>
+</div>
+`;
