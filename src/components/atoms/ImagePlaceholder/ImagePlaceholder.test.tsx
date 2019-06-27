@@ -21,20 +21,20 @@ const renderComp = (props: Partial<Props> = {}) => {
 };
 
 describe('<ImagePlaceholder />', () => {
-  it('правильно отображается', () => {
+  it('renders properly', () => {
     const { container } = render(<ImagePlaceholder />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  describe('если переданы пропсы width и height', () => {
-    it('показывает заглушку с этими размерами', () => {
+  describe('when passed width и height', () => {
+    it('shows placeholder with these sizes', () => {
       const { queryByText } = renderComp();
       expect(queryByText(`${WIDTH} x ${HEIGHT}`)).toBeTruthy();
     });
   });
 
-  describe('если не переданы пропсы width и height', () => {
-    it('показывает заглушку с дефолтными размерами', () => {
+  describe('when not passed width и height', () => {
+    it('shows placeholder with default sizes', () => {
       const { queryByText } = renderComp({
         width: undefined,
         height: undefined,

@@ -7,12 +7,12 @@ import * as s from './BurgerBtn.styles';
 
 type BaseProps = {
   /**
-   * Описание того что делает эта кнопка для скринридеров.
+   * Description for screenreaders.
    * @default 'Toggle menu'
    */
   ariaLabel?: string;
   /**
-   * ID меню, с которым связана эта кнопка. Смотри https://webplatform.github.io/docs/aria/attributes/aria-controls/
+   * ID of assosiated menu. See https://webplatform.github.io/docs/aria/attributes/aria-controls/
    */
   ariaControls: string;
   initialIsOpen?: boolean;

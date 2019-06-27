@@ -5,7 +5,7 @@ import { render } from 'libs/testHelpers';
 
 import ImageLoader, { Props } from './ImageLoader';
 
-const DESCRIPTION = 'Альтернативный текст';
+const DESCRIPTION = 'Alternative text';
 const LOAD_FAILURE_SRC = 'LOAD_FAILURE_SRC';
 const LOAD_SUCCESS_SRC = 'LOAD_SUCCESS_SRC';
 const WIDTH = 640;
@@ -54,13 +54,13 @@ describe('<ImageLoader />', () => {
     });
   });
 
-  it('правильно отображается', () => {
+  it('renders properly', () => {
     const { container } = renderComp();
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  describe('если картинка успешно загрузилась', () => {
-    it('показывает картинку', async () => {
+  describe('when image loaded successfully', () => {
+    it('shows the image', async () => {
       const { queryByAltText } = renderComp();
       const el = await waitForElement(() => queryByAltText(DESCRIPTION));
 
@@ -68,8 +68,8 @@ describe('<ImageLoader />', () => {
     });
   });
 
-  describe('если не удалось загрузить картинку', () => {
-    it('показывает альтернативный текст', async () => {
+  describe('when image loading failed', () => {
+    it('shows alternative text', async () => {
       const { queryByText } = renderComp({
         src: LOAD_FAILURE_SRC,
       });
@@ -79,8 +79,8 @@ describe('<ImageLoader />', () => {
     });
   });
 
-  describe('если картинка грузится', () => {
-    it('показывает заглушку', () => {
+  describe('when image is loading', () => {
+    it('shows placeholder', () => {
       const { queryByText, queryByAltText } = renderComp();
       const altEl = queryByText(DESCRIPTION);
       const imgEl = queryByAltText(DESCRIPTION);

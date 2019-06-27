@@ -5,7 +5,7 @@ import { render } from 'libs/testHelpers';
 import {{ pascalCase name }} from './{{ pascalCase name }}';
 
 describe('<{{ pascalCase name }} />', () => {
-  it('правильно отображается', () => {
+  it('renders properly', () => {
     const { container } = render(<{{ pascalCase name }} />);
     expect(container.firstChild).toMatchSnapshot();
   });

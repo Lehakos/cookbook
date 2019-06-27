@@ -5,7 +5,7 @@ import { render } from 'libs/testHelpers';
 import Button from './Button';
 
 describe('<Button />', () => {
-  it('правильно отображается', () => {
+  it('renders properly', () => {
     const { container } = render(<Button />);
     expect(container.firstChild).toMatchSnapshot();
   });

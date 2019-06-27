@@ -5,7 +5,7 @@ import { render } from 'libs/testHelpers';
 import Box from './Box';
 
 describe('<Box />', () => {
-  it('правильно отображается', () => {
+  it('renders properly', () => {
     const { container } = render(<Box />);
     expect(container.firstChild).toMatchSnapshot();
   });

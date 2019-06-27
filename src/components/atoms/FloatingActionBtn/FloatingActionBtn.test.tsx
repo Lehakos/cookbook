@@ -5,7 +5,7 @@ import { render } from 'libs/testHelpers';
 import FloatingActionBtn from './FloatingActionBtn';
 
 describe('<FloatingActionBtn />', () => {
-  it('правильно отображается', () => {
+  it('renders properly', () => {
     const { container } = render(
       <FloatingActionBtn ariaLabel="Plus">+</FloatingActionBtn>,
     );

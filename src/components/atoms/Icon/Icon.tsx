@@ -14,12 +14,12 @@ export const icons = ['plus'] as const;
 type Props = {
   icon: typeof icons[number];
   /**
-   * Элемент, который показывается, пока иконка грузится
+   * Shows this element while icon is loading
    * @default <Fragment>Loading...</Fragment>
    */
   fallback?: ReactElement;
   /**
-   * Цвет иконки
+   * Color of the icon
    * @default 'currentColor'
    */
   fill?: string;

@@ -5,7 +5,7 @@ import { render } from 'libs/testHelpers';
 import BurgerBtn from './BurgerBtn';
 
 describe('<BurgerBtn />', () => {
-  it('правильно отображается', () => {
+  it('renders properly', () => {
     const { container } = render(<BurgerBtn ariaControls="main-nav" />);
     expect(container.firstChild).toMatchSnapshot();
   });

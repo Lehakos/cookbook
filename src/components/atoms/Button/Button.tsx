@@ -4,7 +4,7 @@ import * as s from './Button.styles';
 
 interface Props {
   /**
-   * Вариант оформления кнопки
+   * Design of button
    * @default 'primary'
    */
   variant?: s.Variant;

@@ -5,11 +5,11 @@ import * as s from './FloatingActionBtn.styles';
 interface Props {
   disabled?: boolean;
   /**
-   * Описание того, что делает кнопка при нажатии. Для доступности
+   * Description for screenreaders
    */
   ariaLabel: string;
   /**
-   * Показывать кнопку в правом нижнем углу с position: fixed
+   * Show button in right bottom angle with position: fixed
    * @default true
    */
   fixedPosition?: boolean;
