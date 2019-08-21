@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import List from './List';
 
-const stories = storiesOf('Atoms|List', module);
+const stories = storiesOf('Molecules|List', module);
 
 stories
   .addDecorator(storyFn => <div style={{ width: '500px' }}>{storyFn()}</div>)
