@@ -18,12 +18,15 @@ type BaseProps = {
   initialIsOpen?: boolean;
 };
 
+type UpdateHandler = (isOpen: boolean) => void;
+
 type ControlledIsOpen = {
   isOpen: boolean;
-  onUpdateIsOpen: (isOpen: boolean) => void;
+  onUpdateIsOpen: UpdateHandler;
 };
 
-type Props = BaseProps & StrictUnion<ControlledIsOpen | {}>;
+type Props = BaseProps &
+  StrictUnion<ControlledIsOpen | { onUpdateIsOpen?: UpdateHandler }>;
 
 const BurgerBtn = ({
   ariaLabel = 'Toggle menu',
@@ -34,8 +37,8 @@ const BurgerBtn = ({
 }: Props) => {
   const [isOpenState, setIsOpen] = useControlledProp<boolean>(
     initialIsOpen,
-    isOpen,
     onUpdateIsOpen,
+    isOpen,
   );
 
   const handleClick = () => {

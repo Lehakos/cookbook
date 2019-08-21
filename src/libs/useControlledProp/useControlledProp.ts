@@ -4,8 +4,8 @@ type Handler<T> = (val: T) => void;
 
 function useControlledProp<T>(
   initialValue: T,
-  value?: T,
   handler?: Handler<T>,
+  value?: T,
 ): [T, Handler<T>] {
   const [state, setState] = useState(initialValue);
 
@@ -13,7 +13,15 @@ function useControlledProp<T>(
     return [value, handler as Handler<T>];
   }
 
-  return [state, setState];
+  const uncontolledHandler = (val: T) => {
+    if (handler) {
+      handler(val);
+    }
+
+    setState(val);
+  };
+
+  return [state, uncontolledHandler];
 }
 
 export { useControlledProp };
