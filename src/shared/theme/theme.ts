@@ -16,7 +16,7 @@ export const colors = {
   notes: '#F9ADA0',
   text: '#3D3E3C',
   grays: [
-    '#CFD8D7',
+    '#e2e2e2',
     '#BDC5C4',
     '#AAB1B0',
     '#979E9D',
