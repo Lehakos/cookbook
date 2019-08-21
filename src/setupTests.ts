@@ -1,3 +1,13 @@
 import 'jest-styled-components';
 import '@testing-library/react/cleanup-after-each';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
+
+window.matchMedia = jest.fn().mockImplementation(query => {
+  return {
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+  };
+});
