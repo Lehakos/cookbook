@@ -1,15 +1,9 @@
 import React from 'react';
 
-import * as s from './{{ pascalCase name }}.styles';
+import * as s from './{{ kebabCase name }}.styles';
 
 interface Props {}
 
-const {{ pascalCase name }}: React.FunctionComponent<Props> = function() {
-  return (
-    <s.Wrapper>
-      {{pascalCase name}}
-    </s.Wrapper>
-  );
+export const {{ pascalCase name }}: React.FunctionComponent<Props> = function() {
+  return <s.Wrapper>{{pascalCase name}}</s.Wrapper>;
 };
-
-export default {{ pascalCase name }};

@@ -79,7 +79,7 @@ export interface Theme {
   zIndices: ZIndices;
 }
 
-const theme: Theme = {
+export const theme: Theme = {
   colors,
   space,
   heights,
@@ -92,5 +92,3 @@ const theme: Theme = {
   fonts,
   zIndices,
 };
-
-export default theme;

@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> renders properly 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c1:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.c2::before {
+  content: 'A';
+  width: 0;
+  visibility: hidden;
+}
+
+.c2::after {
+  height: 4px;
+  width: 4px;
+  content: '';
+  border-radius: 50%;
+  background: #F47983;
+}
+
+.c0 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+<ul
+  class="c0"
+>
+  <li
+    class="c1"
+  >
+    <span
+      class="c2"
+    />
+    <span
+      class=""
+    >
+      one
+    </span>
+  </li>
+  <li
+    class="c1"
+  >
+    <span
+      class="c2"
+    />
+    <span
+      class=""
+    >
+      two
+    </span>
+  </li>
+  <li
+    class="c1"
+  >
+    <span
+      class="c2"
+    />
+    <span
+      class=""
+    >
+      three
+    </span>
+  </li>
+</ul>
+`;

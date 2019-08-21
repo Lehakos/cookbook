@@ -6,9 +6,9 @@ import { withConsole } from '@storybook/addon-console';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import theme from 'shared/theme';
+import { theme } from 'shared/theme';
 
-import GlobalStyles from '../src/GlobalStyles';
+import { GlobalStyles } from '../src/global-styles';
 
 addParameters({
   options: {

@@ -1,4 +1,4 @@
-const componentPath = '../src/{{path}}/{{type}}/{{pascalCase name}}';
+const componentPath = '../src/{{path}}/{{type}}/{{kebabCase name}}';
 
 module.exports = {
   description: 'Создать новый компонент',
@@ -20,7 +20,7 @@ module.exports = {
       name: 'name',
       message: 'Введите название компонента',
       default: 'Button',
-      validate: (value, { type, path }) => {
+      validate: value => {
         if (/.+/.test(value)) {
           return true;
         }
@@ -35,23 +35,23 @@ module.exports = {
       default: true,
     },
   ],
-  actions: (data) => {
+  actions: data => {
     const files = [
       {
         type: 'add',
-        path: `${componentPath}/{{pascalCase name}}.tsx`,
+        path: `${componentPath}/{{kebabCase name}}.tsx`,
         templateFile: './component/templates/component.tsx.hbs',
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: `${componentPath}/{{pascalCase name}}.styles.ts`,
+        path: `${componentPath}/{{kebabCase name}}.styles.ts`,
         templateFile: './component/templates/styles.ts.hbs',
         abortOnFail: true,
       },
       {
         type: 'add',
-        path: `${componentPath}/{{pascalCase name}}.story.tsx`,
+        path: `${componentPath}/{{kebabCase name}}.story.tsx`,
         templateFile: './component/templates/story.tsx.hbs',
         abortOnFail: true,
       },
@@ -66,7 +66,7 @@ module.exports = {
     if (data.withTest) {
       files.push({
         type: 'add',
-        path: `${componentPath}/{{pascalCase name}}.test.tsx`,
+        path: `${componentPath}/{{kebabCase name}}.test.tsx`,
         templateFile: './component/templates/test.tsx.hbs',
         abortOnFail: true,
       });

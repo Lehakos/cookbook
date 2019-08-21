@@ -1,1 +1,1 @@
-export { StrictUnion } from './StrictUnion';
+export { StrictUnion } from './strict-union';

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tag /> renders properly 1`] = `
+.c0 {
+  display: inline-block;
+  padding: 4px 8px;
+  border: none;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #3D3E3C;
+  border-radius: 2px;
+}
+
+<div
+  class="c0"
+  style="background-color: rgb(226, 226, 226);"
+/>
+`;

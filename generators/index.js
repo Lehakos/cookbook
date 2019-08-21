@@ -1,5 +1,5 @@
 const componentGenerator = require('./component');
 
-module.exports = (plop) => {
+module.exports = plop => {
   plop.setGenerator('component', componentGenerator);
 };
