@@ -3,7 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { TagsList } from './tags-list';
 
-const stories = storiesOf('Molecules|TagsList', module);
+const stories = storiesOf('Molecules|TagsList', module).addParameters({
+  component: TagsList,
+});
 
 stories.add('Default', () => (
   <TagsList

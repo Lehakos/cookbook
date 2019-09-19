@@ -16,7 +16,10 @@ module.exports = merge(common, {
     port: 3000,
   },
 
-  plugins: [new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 
   module: {
     rules: [{ enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }],

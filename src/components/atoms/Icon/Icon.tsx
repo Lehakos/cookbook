@@ -1,7 +1,6 @@
 import React, {
   useEffect,
   useReducer,
-  Fragment,
   ComponentType,
   ReactElement,
 } from 'react';
@@ -63,7 +62,7 @@ const reducer = (
 
 export const Icon = ({
   icon,
-  fallback = <Fragment>Loading...</Fragment>,
+  fallback = <>Loading...</>,
   fill = 'currentColor',
   size = 1,
   ...rest

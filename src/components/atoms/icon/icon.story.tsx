@@ -4,7 +4,9 @@ import { number, color } from '@storybook/addon-knobs';
 
 import { Icon, icons } from './icon';
 
-const stories = storiesOf('Atoms|Icon', module);
+const stories = storiesOf('Atoms|Icon', module).addParameters({
+  component: Icon,
+});
 
 icons.forEach(icon => {
   stories.add(icon, () => (

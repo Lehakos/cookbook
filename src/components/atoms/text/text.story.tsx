@@ -4,7 +4,9 @@ import { select } from '@storybook/addon-knobs';
 
 import { Text } from './text';
 
-const stories = storiesOf('Atoms|Text', module);
+const stories = storiesOf('Atoms|Text', module).addParameters({
+  component: Text,
+});
 
 stories
   .add('No props', () => <Text>Some text</Text>)

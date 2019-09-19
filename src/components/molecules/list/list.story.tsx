@@ -3,7 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { List } from './list';
 
-const stories = storiesOf('Molecules|List', module);
+const stories = storiesOf('Molecules|List', module).addParameters({
+  component: List,
+});
 
 stories
   .addDecorator(storyFn => <div style={{ width: '500px' }}>{storyFn()}</div>)

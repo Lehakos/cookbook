@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import { boolean, number } from '@storybook/addon-knobs';
 import { Carousel } from './carousel';
 
-const stories = storiesOf('Atoms|Carousel', module);
+const stories = storiesOf('Atoms|Carousel', module).addParameters({
+  component: Carousel,
+});
 
 const SlideWrapper = styled.div`
   height: 250px;

@@ -4,7 +4,9 @@ import { boolean } from '@storybook/addon-knobs';
 
 import { FloatingActionBtn } from './floating-action-btn';
 
-const stories = storiesOf('Atoms|FloatingActionBtn', module);
+const stories = storiesOf('Atoms|FloatingActionBtn', module).addParameters({
+  component: FloatingActionBtn,
+});
 
 stories.add('Default', () => (
   <FloatingActionBtn

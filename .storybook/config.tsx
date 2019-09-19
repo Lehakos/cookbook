@@ -1,7 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { withConsole } from '@storybook/addon-console';
 import { create } from '@storybook/theming';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -16,14 +15,11 @@ addParameters({
       base: 'light',
       brandTitle: 'ui-kit',
     }),
-    sortStoriesByKind: true,
     hierarchyRootSeparator: '|',
-    hierarchySeparator: '/',
+    hierarchySeparator: /\//,
     addonPanelInRight: true,
   },
 });
-
-addDecorator(withInfo());
 
 addDecorator(withKnobs);
 

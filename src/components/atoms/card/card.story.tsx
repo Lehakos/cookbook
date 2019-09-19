@@ -3,7 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { Card } from './card';
 
-const stories = storiesOf('Atoms|Card', module);
+const stories = storiesOf('Atoms|Card', module).addParameters({
+  component: Card,
+});
 
 stories.add('Default', () => (
   <Card>

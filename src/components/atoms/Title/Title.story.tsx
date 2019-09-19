@@ -1,15 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Title } from './title';
 
-const stories = storiesOf('Atoms|Title', module);
+const stories = storiesOf('Atoms|Title', module).addParameters({
+  component: Title,
+});
 
 stories
   .add('Default', () => <Title>This is a title!</Title>)
   .add('Show margin', () => (
-    <Fragment>
+    <>
       <Title>This is a title!</Title>
       <div>Some text</div>
-    </Fragment>
+    </>
   ));

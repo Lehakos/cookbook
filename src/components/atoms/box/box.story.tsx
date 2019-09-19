@@ -4,7 +4,9 @@ import { select } from '@storybook/addon-knobs';
 
 import { Box } from './box';
 
-const stories = storiesOf('Atoms|Box', module);
+const stories = storiesOf('Atoms|Box', module).addParameters({
+  component: Box,
+});
 
 stories.add('Default', () => (
   <Box

@@ -3,7 +3,9 @@ import { storiesOf } from '@storybook/react';
 
 import { ImageLoader } from './image-loader';
 
-const stories = storiesOf('Molecules|ImageLoader', module);
+const stories = storiesOf('Molecules|ImageLoader', module).addParameters({
+  component: ImageLoader,
+});
 
 stories
   .add('Fixed size', () => (
