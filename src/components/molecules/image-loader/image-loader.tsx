@@ -6,8 +6,8 @@ import { StrictUnion } from 'shared/types';
 import * as s from './image-loader.styles';
 
 type Size = {
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
 };
 
 export type Props = {
@@ -66,7 +66,7 @@ export const ImageLoader: React.FunctionComponent<Props> = function({
     loaded: false,
     error: false,
     computedSize:
-      typeof width === 'number' && typeof height === 'number'
+      typeof width !== 'undefined' && typeof height !== 'undefined'
         ? { width, height }
         : {},
   };

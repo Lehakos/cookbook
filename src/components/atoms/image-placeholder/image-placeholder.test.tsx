@@ -1,13 +1,9 @@
 import React from 'react';
+import { waitForElement } from '@testing-library/react';
 
 import { render } from 'libs/test-helpers';
 
-import {
-  ImagePlaceholder,
-  Props,
-  DEFAULT_HEIGHT,
-  DEFAULT_WIDTH,
-} from './image-placeholder';
+import { ImagePlaceholder, Props } from './image-placeholder';
 
 const WIDTH = 640;
 const HEIGHT = 480;
@@ -23,24 +19,31 @@ const renderComp = (props: Partial<Props> = {}) => {
 
 describe('<ImagePlaceholder />', () => {
   it('renders properly', () => {
-    const { container } = render(<ImagePlaceholder />);
+    const { container } = renderComp();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   describe('when passed width и height', () => {
-    it('shows placeholder with these sizes', () => {
-      const { queryByText } = renderComp();
-      expect(queryByText(`${WIDTH} x ${HEIGHT}`)).toBeTruthy();
-    });
-  });
-
-  describe('when not passed width и height', () => {
-    it('shows placeholder with default sizes', () => {
-      const { queryByText } = renderComp({
-        width: undefined,
-        height: undefined,
+    beforeEach(() => {
+      Element.prototype.getBoundingClientRect = jest.fn(() => {
+        return {
+          width: WIDTH,
+          height: HEIGHT,
+          left: 0,
+          top: 0,
+          right: 0,
+          bottom: 0,
+        };
       });
-      expect(queryByText(`${DEFAULT_WIDTH} x ${DEFAULT_HEIGHT}`)).toBeTruthy();
+    });
+
+    it('shows placeholder with these sizes', async () => {
+      const { queryByText } = renderComp();
+      const el = await waitForElement(() =>
+        queryByText(`${WIDTH} x ${HEIGHT}`),
+      );
+
+      expect(el).toBeTruthy();
     });
   });
 });

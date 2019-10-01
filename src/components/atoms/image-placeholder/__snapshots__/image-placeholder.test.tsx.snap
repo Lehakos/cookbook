@@ -17,8 +17,8 @@ exports[`<ImagePlaceholder /> renders properly 1`] = `
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
-  width: 480px;
-  height: 360px;
+  width: 640px;
+  height: 480px;
   text-align: center;
   background-color: #e2e2e2;
 }
@@ -33,16 +33,16 @@ exports[`<ImagePlaceholder /> renders properly 1`] = `
 
 <div
   class="c0"
-  height="360px"
-  width="480px"
+  height="480px"
+  width="640px"
 >
   <span
     aria-hidden="true"
     class="c1"
   >
-    480
+    0
      x 
-    360
+    0
   </span>
 </div>
 `;

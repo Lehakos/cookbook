@@ -26,30 +26,33 @@ const renderComp = (props: Partial<Props> = {}) => {
 
 describe('<ImageLoader />', () => {
   beforeAll(() => {
-    Object.defineProperty((global as any).Image.prototype, 'src', {
-      set(src) {
-        if (src === LOAD_FAILURE_SRC) {
-          setTimeout(() =>
-            fireEvent(
-              this,
-              new ErrorEvent('error', { error: new Error('some error') }),
-            ),
-          );
-        } else if (src === LOAD_SUCCESS_SRC) {
-          setTimeout(() => fireEvent(this, new Event('load')));
-        }
+    Object.defineProperties((global as any).Image.prototype, {
+      src: {
+        set(src) {
+          if (src === LOAD_FAILURE_SRC) {
+            setTimeout(() =>
+              fireEvent(
+                this,
+                new ErrorEvent('error', { error: new Error('some error') }),
+              ),
+            );
+          } else if (src === LOAD_SUCCESS_SRC) {
+            setTimeout(() => fireEvent(this, new Event('load')));
+          }
+        },
+        configurable: true,
       },
-    });
-
-    Object.defineProperty((global as any).Image.prototype, 'naturalWidth', {
-      get() {
-        return NATURAL_WIDTH;
+      naturalWidth: {
+        get() {
+          return NATURAL_WIDTH;
+        },
+        configurable: true,
       },
-    });
-
-    Object.defineProperty((global as any).Image.prototype, 'naturalHeight', {
-      get() {
-        return NATURAL_HEIGHT;
+      naturalHeight: {
+        get() {
+          return NATURAL_HEIGHT;
+        },
+        configurable: true,
       },
     });
   });

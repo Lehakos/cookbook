@@ -40,9 +40,9 @@ exports[`<ImageLoader /> renders properly 1`] = `
     aria-hidden="true"
     class="c1"
   >
-    640
+    0
      x 
-    480
+    0
   </span>
 </div>
 `;
