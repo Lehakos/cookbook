@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { select } from '@storybook/addon-knobs';
 
 import { Title } from './title';
 
@@ -11,7 +12,9 @@ stories
   .add('Default', () => <Title>This is a title!</Title>)
   .add('Show margin', () => (
     <>
-      <Title>This is a title!</Title>
+      <Title size={select('size', ['s', 'm', 'l'], 'l')}>
+        This is a title!
+      </Title>
       <div>Some text</div>
     </>
   ));

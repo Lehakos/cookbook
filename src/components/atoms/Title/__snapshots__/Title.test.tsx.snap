@@ -2,15 +2,20 @@
 
 exports[`<Title /> renders properly 1`] = `
 .c0 {
+  width: 100%;
   margin: 0;
-  margin-bottom: 0.75rem;
   font-size: 1.5rem;
   color: #F47983;
   text-transform: uppercase;
+  text-align: center;
   -webkit-letter-spacing: 0.05rem;
   -moz-letter-spacing: 0.05rem;
   -ms-letter-spacing: 0.05rem;
   letter-spacing: 0.05rem;
+}
+
+.c0:not(:last-child) {
+  margin-bottom: 0.5em;
 }
 
 <h1

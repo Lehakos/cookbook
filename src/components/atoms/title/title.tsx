@@ -1,13 +1,29 @@
 import styled from 'styled-components';
 import { prop, withProp } from 'styled-tools';
-import { rem } from 'polished';
 
-export const Title = styled.h1`
+const sizeMap = {
+  l: 'theme.fontSizes.4',
+  m: 'theme.fontSizes.3',
+  s: 'theme.fontSizes.2',
+};
+
+type Size = 's' | 'm' | 'l';
+
+export const Title = styled.h1<{ size?: Size }>`
+  width: 100%;
   margin: 0;
-  margin-bottom: ${withProp('theme.space.4', rem)};
 
-  font-size: ${prop('theme.fontSizes.4')};
+  font-size: ${withProp('size', (size: Size) => prop(sizeMap[size]))};
   color: ${prop('theme.colors.primary')};
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.05rem;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
 `;
+
+Title.defaultProps = {
+  size: 'l',
+};
